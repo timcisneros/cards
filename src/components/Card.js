@@ -24,6 +24,7 @@ const Card = ({ card, onClick, isHovered }) => {
                 alt={`Card ${card}`}
                 width={125}
                 height={181.5}
+                priority
             />
         </div>
     );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Hand from '../src/components/Hand';
+import Head from 'next/head';
 
 const deck = Array.from({ length: 52 }, (_, i) => i + 1);
 
@@ -18,27 +19,32 @@ export default function Home() {
     };
 
     return (
-        <div className="container">
-            <button onClick={drawCard}>Draw a Card</button>
-            <Hand cards={hand} />
-            <style jsx>{`
-                .container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    margin-top: 20px;
-                }
+        <>
+            <Head>
+                <title>Cards</title>
+            </Head>
+            <div className="container">
+                <button onClick={drawCard}>Draw a Card</button>
+                <Hand cards={hand} />
+                <style jsx>{`
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-top: 20px;
+                    }
 
-                button {
-                    font-size: 18px;
-                    padding: 10px 20px;
-                    background-color: #0070f3;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                }
-            `}</style>
-        </div>
+                    button {
+                        font-size: 18px;
+                        padding: 10px 20px;
+                        background-color: #0070f3;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                `}</style>
+            </div>
+        </>
     );
 }
